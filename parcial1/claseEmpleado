@@ -1,0 +1,34 @@
+//Empleado
+package com._00070518_XGHM_POO;
+import javax.swing.*;
+public class Empleado {
+
+    protected String nombre;
+    protected String puesto;
+    protected  Double mesesdecontrato;
+    protected Double sueldo;
+
+    public Empleado(String nombre, String puesto, Double sueldo,Double mesedecontarto) {
+        this.nombre = nombre;
+        this.puesto = puesto;
+        this.mesesdecontrato=mesesdecontrato;
+        this.sueldo = sueldo;
+
+    }
+
+    public Empleado(String nombre, String puesto, Double salario) {
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getPuesto() {
+        return puesto;
+    }
+
+    public Double getSueldo() {
+        return sueldo;
+    }
+}
+ 
