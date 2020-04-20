@@ -1,0 +1,28 @@
+//Plazafija
+package com._00070518_XGHM_POO;
+
+public class Plazafija extends Empleado {
+    private int Extension;
+    private Double sueldo;
+    private Double renta;
+    private  Double ISSS;
+    private Double AFP;
+
+    public int getExtension(){
+        return Extension;
+
+    }
+    public void setExtension(int extension){
+        Extension=extension;
+    }
+    public Plazafija(String nombre,String puesto,Double salario,int extension,Double AFP,Double ISSS,Double renta,Double sueldo){
+        super(nombre,puesto,salario);
+        Extension=extension;
+        this.AFP=AFP;
+        this.ISSS=ISSS;
+        this.sueldo=sueldo;
+        this.renta=renta;
+
+    }
+
+}
