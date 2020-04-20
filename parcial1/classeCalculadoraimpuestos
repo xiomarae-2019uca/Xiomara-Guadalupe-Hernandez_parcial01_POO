@@ -1,0 +1,34 @@
+//Calculadoraimpuestos
+package com._00070518_XGHM_POO;
+import java.util.Scanner;
+public class Calculadoraimpuesto extends Plazafija {
+    private int mesescontratados;
+    private String sueldo;
+    private Double totalISSS;
+    private Double totalAFP;
+    private Double totalrenta;
+    private String nombre;
+    private int restatotal;
+
+    public Calculadoraimpuesto(String nombre, String puesto, Double sueldo, int mesescontratados, int extencion, Double AFP, Double ISSS, Double renta,
+                               Double totalrenta, Double totalISSS, Double totalAFP) {
+        super(nombre, puesto, sueldo, extencion, AFP, ISSS, renta, sueldo);
+        totalAFP = totalAFP;
+        totalISSS = totalISSS;
+        totalrenta = totalrenta;
+        this.nombre = nombre;
+
+
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("ingrese el sueldo:");
+        sueldo = entrada.nextDouble();
+        if (sueldo > 0) {
+            renta = sueldo * 0.1;
+            sueldo = sueldo - renta;
+            System.out.println("su sueldo es:" + sueldo);
+        }
+    }
+}
+
+
+
