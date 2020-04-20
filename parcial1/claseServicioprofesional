@@ -1,0 +1,33 @@
+//Servicioprofesional
+package com._00070518_XGHM_POO;
+import java.util.Scanner;
+public class Servicioprofesional<sueldo, sueldofinal> extends Empleado {
+    private int mesescontrato;
+    private String nombre;
+    private String puesto;
+    private Double sueldo;
+    private Double renta;
+    private Double sueldofinal;
+
+    public Servicioprofesional(String nombre, String puesto, Double sueldo, int mesescontrato, Double renta) {
+        super(nombre, puesto, sueldo);
+        mesescontrato = mesescontrato;
+        this.nombre = nombre;
+        this.puesto = puesto;
+        this.sueldo = sueldo;
+        this.renta = renta;
+
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("ingrese el salario del empleado:");
+        sueldo = entrada.nextDouble();
+
+        if (sueldo > 0) {
+            sueldo = sueldo - 0;
+        }
+        sueldo = sueldo * 0.10;
+        sueldofinal = sueldo - renta;
+        System.out.println("el sueldo del empleado es:" + sueldofinal);
+    }
+}
+
+
