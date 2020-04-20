@@ -1,0 +1,91 @@
+# Xiomara-Guadalupe-Hernandez_parcial01_POO
+Parcial 1
+//Main
+package com._00070518_XGHM_POO;
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Main {
+    private static Calculadoraimpuesto menu;
+
+    public static void main(String[] args) {
+        Scanner Empleado = new Scanner(System.in);
+        String nombre, puesto;
+        double salario;
+        double AFP = 0;
+        double ISSS = 0;
+        double renta = 0.1;
+        double sueldo;
+        int mesesdecontrato;
+        double tmc;
+        int restatotal;
+
+
+
+            Servicioprofesional unservicioprofesional;
+            Scanner entrada = new Scanner(System.in);
+        System.out.println("calculo de empleado por servicio:");
+            System.out.println("cual es su nombre:");
+            nombre = entrada.next();
+            System.out.println("cual es su puesto:");
+            puesto = entrada.next();
+            System.out.println("cual es su sueldo:");
+            sueldo = entrada.nextDouble();
+            if (sueldo > 0) {
+                renta = sueldo * 0.1;
+                sueldo = sueldo - renta;
+                System.out.println("su sueldo es:" + sueldo);
+                throw new IllegalArgumentException();
+            }
+            Plazafija unaplaza;
+
+            Scanner entrada1 = new Scanner(System.in);
+        System.out.println("calculo de empleado fijo:");
+            System.out.println("cual es su nombre:");
+            nombre = entrada1.next();
+            System.out.println("cual es su puesto:");
+            puesto = entrada1.next();
+            System.out.println("meses de contrato:");
+            mesesdecontrato = entrada1.nextInt();
+            System.out.println(("cual es su sueldo:"));
+            sueldo = entrada1.nextDouble();
+
+            if (mesesdecontrato > 0) {
+                double mesesdecontarto;
+                tmc = mesesdecontrato * sueldo;
+                System.out.println("su sueldo segun contarto es:" + tmc);
+                AFP = sueldo * 0.065;
+                ISSS = sueldo * 0.03;
+                sueldo = (sueldo - AFP - ISSS);
+                System.out.println("su sueldo neto sin renta es:" + sueldo);
+
+            } else {
+                if (sueldo <= 472) {
+
+                    System.out.println("su sueldo neto sin renta es:" + sueldo);
+                } else {
+                    if (sueldo <= 895.24) {
+                        renta = 0.1 * (sueldo - 472) + 17.67;
+                        sueldo = sueldo - AFP - ISSS - renta;
+                        System.out.println("la renta es de:" + sueldo);
+                    } else {
+                        if (sueldo <= 2038.10) {
+                            renta = 0.2 * (sueldo - 895.24) + 60;
+                            sueldo = sueldo - AFP - ISSS - renta;
+                            System.out.println("la renta es de:" + sueldo);
+                        } else {
+                            if (sueldo > 2038.10) {
+                                renta = 0.3 * (sueldo - 2038.24) + 288.57;
+                                sueldo = sueldo - AFP - ISSS - renta;
+                                System.out.println("la renta es de:" + sueldo);
+
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
